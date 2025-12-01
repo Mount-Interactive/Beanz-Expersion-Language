@@ -3,6 +3,11 @@
 registry = "test"
 
 [[package]]
+name = "elttob/fusion"
+version = "0.3.0"
+dependencies = []
+
+[[package]]
 name = "evaera/promise"
 version = "4.0.0"
 dependencies = []
@@ -10,7 +15,7 @@ dependencies = []
 [[package]]
 name = "glenn/ro-graph"
 version = "0.1.0"
-dependencies = [["knit", "sleitnick/knit@1.7.0"]]
+dependencies = [["fusion", "elttob/fusion@0.3.0"], ["knit", "sleitnick/knit@1.7.0"]]
 
 [[package]]
 name = "sleitnick/comm"
