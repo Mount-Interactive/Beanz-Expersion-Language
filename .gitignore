@@ -1,0 +1,7 @@
+# Project place file
+/Ro-Graph.rbxlx
+Packages/
+
+# Roblox Studio lock files
+/*.rbxlx.lock
+/*.rbxl.lock
