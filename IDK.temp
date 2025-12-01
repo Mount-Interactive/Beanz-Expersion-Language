@@ -1,0 +1,12 @@
+SET 100;
+ADD 1;
+SUB 2;
+MULTIPLY 4 ;
+DIV 3;
+
+SQRT;
+ABS;
+
+WRITE(String);
+READ(String);
+PI;
