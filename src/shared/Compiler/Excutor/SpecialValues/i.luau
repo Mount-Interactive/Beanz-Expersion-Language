@@ -1,1 +1,1 @@
-return math.sqrt(-1)
+return math.sqrt(-1) -- why more like why not. also name conventions are over rated.

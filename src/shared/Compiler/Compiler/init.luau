@@ -21,7 +21,7 @@ return function(Code: string)
 
 
     for _ , V in Seperated do
-        local CommentCheck = V:split("--") -- fuck your comments
+        local CommentCheck = V:split("--") -- comments are over rated
 
         if CommentCheck[2] then
             if CommentCheck[1] ~= "" then
