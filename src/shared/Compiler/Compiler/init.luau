@@ -21,6 +21,27 @@ return function(Code: string)
 
 
     for _ , V in Seperated do
+        local TabCheck = V:split("  ")
+        V = ""
+        for _ , N in TabCheck do
+            if N ~= "" then
+                V = `{V} {N}`
+            end
+        end
+
+        local SpaceCheck = V:split(" ")
+        V = ""
+        for _ , N in SpaceCheck do
+            if N ~= "" then
+                V = `{V} {N}`
+            end
+        end
+        
+
+
+
+
+
         local CommentCheck = V:split("--") -- comments are over rated
 
         if CommentCheck[2] then
@@ -30,6 +51,7 @@ return function(Code: string)
             end
             continue
         end
+
         table.insert(Info.Instructions , V)
     end
 

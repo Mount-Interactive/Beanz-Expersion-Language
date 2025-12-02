@@ -7,9 +7,6 @@
       "Shared": {
         "$path": "src/shared"
       },
-      "Packages": {
-        "$path": "Packages"
-      },
       "Constances": {
         "$path": "src/Constances"
       }
