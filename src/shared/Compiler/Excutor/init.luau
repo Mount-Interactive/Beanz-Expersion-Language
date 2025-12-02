@@ -45,8 +45,6 @@ function Excutor.Excute(Info: Types.CompilerExport)
                             Value = require(script.SpecialValues:FindFirstChild(V))
                         elseif CheckIfString(V) then
                             assert(table.find(VALID_FUNCTION_THAT_CAN_TAKE_STRING , V) ,  `[{script.Name}] {FunctionName} Can not take a string as Value`)
-
-
                         else
                             error(`[{script.Name}] {V} is not a Valid Number or Special Value` , 1)
                         end
