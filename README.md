@@ -1,5 +1,4 @@
-# Ro-Graph
-Currently just a weird programing languge made to do math stuff mostly just for the hell of it.
+# Beanz-Expersion-Language
 
 anyway syntax guide
 
