@@ -6,6 +6,12 @@ DIV 3;
 
 SQRT;
 ABS;
+IN;
+LOG;
+
+PI;
+
+
 
 WRITE(String);
 READ(String);

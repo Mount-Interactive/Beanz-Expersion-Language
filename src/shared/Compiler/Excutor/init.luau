@@ -34,8 +34,10 @@ function Excutor.Excute(Info: Types.CompilerExport)
                     else
                         if CheckIfNumberIsValid(V) or CheckIfString(V) then
                             Value = V
+                        elseif script.SpecialValues:FindFirstChild(V) then
+                            Value = require(script.SpecialValues:FindFirstChild(V))
                         else
-                            error(`[{script.Name}] {V} is not a Valid Number or String` , 1)
+                            error(`[{script.Name}] {V} is not a Valid Number, String or Special Value` , 1)
                         end
                     end
                 end
