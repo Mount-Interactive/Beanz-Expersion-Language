@@ -31,13 +31,13 @@ WRITE STRING; -- writes to CACHE
 ```
 
 ## SpecialValues
-Perderminated Values
+can be used instead of numbers and string
 
 ```luau
 PI; -- 3.14
+i;  -- SQRT -1 (Naming Convention Over Rated)
 
 READ(STRING); -- reads from CACHE
-
 ```
 
 
