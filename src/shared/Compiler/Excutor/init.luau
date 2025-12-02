@@ -15,7 +15,7 @@ local VALID_FUNCTION_THAT_CAN_TAKE_STRING = {
 
 
 
-local function ReadFromCache(Info : Types.CompilerExport , Instruction : string)
+local function ReadFromCache(Info , Instruction : string)
     local Name = CheckIfString(Instruction)
 
     assert(Name , `[{script.Name}] {Instruction} String Is not Valid.`)
@@ -24,7 +24,7 @@ local function ReadFromCache(Info : Types.CompilerExport , Instruction : string)
 end
 
 
-function Excutor.Excute(Info: Types.CompilerExport)
+function Excutor.Excute(Info)
     for StepNum , Instruction in Info.Instruction do
         local separated = string.split(Instruction , " ")
 
