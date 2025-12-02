@@ -22,7 +22,7 @@ local function ReadFromCache(Info , Instruction : string)
 end
 
 
-function Excutor.Excute(Info)
+function Excutor.Excute(Info) : number
     for StepNum , Instruction in Info.Instruction do
         local separated = string.split(Instruction , " ")
 
@@ -60,7 +60,11 @@ end
 
 
 
-
+function Excutor.Test(Info , TestValue)
+    if Excutor.Excute(Info) ~= TestValue then
+        warn("Test Failed Amount Returned In correct.")
+    end
+end
 
 
 

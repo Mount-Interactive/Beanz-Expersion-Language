@@ -12,6 +12,18 @@ functions are the first word in your program a current list at time of writing.
 
 ```luau
 ADD VALUE; -- adds active and VALUE
+SUB VALUE; -- subbtracs active from VALUE
+MULTYIPLY VALUE; -- time active by VALUE
+DIV VALUE; -- divides actice by VALUE
+
+ABS; 
+LOG;
+SQRT;
+
+SIN;
+COS;
+TAN;
+
 
 SET VALUE; -- sets active to VALUE
 
