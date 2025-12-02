@@ -8,8 +8,5 @@ return {
     Excutor = function(Info)
         print(require(script.Excutor).Excute(Info))
     end,
-    Compiler = nil,
-
-
-
+    Compiler = require(script.Compiler),
 }

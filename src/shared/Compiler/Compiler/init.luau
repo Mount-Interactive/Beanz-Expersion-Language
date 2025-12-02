@@ -29,7 +29,6 @@ return function(Code: string)
             end
             continue
         end
-
         table.insert(Info.Instructions , V)
     end
 
