@@ -7,10 +7,8 @@ local Util  = require(script.Parent.Util)
 local CheckIfString = Util.CheckIfString
 local CheckIfNumberIsValid = Util.CheckIfNumberIsValid
 
-local VALID_FUNCTION_THAT_CAN_TAKE_STRING = {
+local VALID_FUNCTIONS_THAT_CAN_TAKE_STRING = {
     "WRITE",
-
-
 }
 
 
@@ -44,7 +42,7 @@ function Excutor.Excute(Info)
                         elseif script.SpecialValues:FindFirstChild(V) then
                             Value = require(script.SpecialValues:FindFirstChild(V))
                         elseif CheckIfString(V) then
-                            assert(table.find(VALID_FUNCTION_THAT_CAN_TAKE_STRING , V) ,  `[{script.Name}] {FunctionName} Can not take a string as Value`)
+                            assert(table.find(VALID_FUNCTIONS_THAT_CAN_TAKE_STRING , V) ,  `[{script.Name}] {FunctionName} Can not take a string as Value`)
                         else
                             error(`[{script.Name}] {V} is not a Valid Number or Special Value` , 1)
                         end
