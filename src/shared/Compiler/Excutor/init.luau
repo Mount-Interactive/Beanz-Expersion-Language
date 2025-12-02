@@ -7,6 +7,13 @@ local Util  = require(script.Parent.Util)
 local CheckIfString = Util.CheckIfString
 local CheckIfNumberIsValid = Util.CheckIfNumberIsValid
 
+local VALID_FUNCTION_THAT_CAN_TAKE_STRING = {
+    "WRITE",
+
+
+}
+
+
 
 local function ReadFromCache(Info : Types.CompilerExport , Instruction : string)
     local Name = CheckIfString(Instruction)
@@ -32,12 +39,16 @@ function Excutor.Excute(Info: Types.CompilerExport)
                     if V:split("(")[1] == "READ" then
                         Value = ReadFromCache(Info , V)
                     else
-                        if CheckIfNumberIsValid(V) or CheckIfString(V) then
-                            Value = V
+                        if CheckIfNumberIsValid(V) then
+                            Value = tonumber(V)
                         elseif script.SpecialValues:FindFirstChild(V) then
                             Value = require(script.SpecialValues:FindFirstChild(V))
+                        elseif CheckIfString(V) then
+                            assert(table.find(VALID_FUNCTION_THAT_CAN_TAKE_STRING , V) ,  `[{script.Name}] {FunctionName} Can not take a string as Value`)
+
+
                         else
-                            error(`[{script.Name}] {V} is not a Valid Number, String or Special Value` , 1)
+                            error(`[{script.Name}] {V} is not a Valid Number or Special Value` , 1)
                         end
                     end
                 end
