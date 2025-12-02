@@ -6,6 +6,10 @@ WRITE (KFC);
 SET 1000;
 
 ADD READ(KFC);
+WRITE (KFC)
+
+SET 1
+DIV READ(KFC)
 ]]
 
 

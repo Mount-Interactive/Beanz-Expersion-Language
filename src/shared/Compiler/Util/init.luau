@@ -5,7 +5,7 @@ function Util.CheckIfString(String:string)
     if Seperated1 then
         local Seperated2 = Seperated1:split(")")[1]
         if Seperated2 then
-            return Seperated2
+            return true
         end
     end
     return nil
@@ -35,6 +35,16 @@ function Util.CheckIfNumberIsValid(Number : string)
     return true
 end
 
+function Util.GetAndCheckString(Instruction:string)
+    local Seperated1 = Instruction:split("(")[2]
+    if Seperated1 then
+        local Seperated2 = Seperated1:split(")")[1]
+        if Seperated2 then
+            return Seperated2
+        end
+    end
+    return nil
+end
 
 
 return Util

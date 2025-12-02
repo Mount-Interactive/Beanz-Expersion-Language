@@ -26,6 +26,7 @@ return function(Code: string)
         if CommentCheck[2] then
             if CommentCheck[1] ~= "" then
                 table.insert(Info.Instructions , CommentCheck[1])
+                continue
             end
             continue
         end
