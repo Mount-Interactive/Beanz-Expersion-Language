@@ -1,13 +1,13 @@
-local Types = require(game:GetService("ReplicatedStorage").Constances.Types.Compiler)
-local Util  = require(script.Parent.Util)
+--local Types = require(game:GetService("ReplicatedStorage").Constances.Types.Compiler)
+--local Util  = require(script.Parent.Util)
 
 
-
+--[[
 local CheckIfString = Util.CheckIfString
 local CheckIfNumberIsValid = Util.CheckIfNumberIsValid
 
 local Functions = script.Parent.Excutor.Functions
-
+]]
 
 return function(Code: string)
     local Seperated = Code:split(";")
