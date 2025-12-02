@@ -13,6 +13,6 @@ PI;
 
 
 
-WRITE(String);
+WRITE String;
 READ(String);
 PI;
