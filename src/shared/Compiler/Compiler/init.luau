@@ -5,9 +5,9 @@
 --[[
 local CheckIfString = Util.CheckIfString
 local CheckIfNumberIsValid = Util.CheckIfNumberIsValid
-
-local Functions = script.Parent.Excutor.Functions
 ]]
+local Functions = script.Parent.Excutor.Functions
+
 
 local AllowedCharacter = require(script.Parent.ValidCharacterList)
 
@@ -42,6 +42,7 @@ return function(Code: string)
         elseif V == " " then
             if CurrentFunction ~= "" then
                 CurrentStage = 2
+                assert(Functions:FindFirstChild(CurrentFunction) , `[{script.Name}] {CurrentFunction} is not a valid function`)
             end
         end
     end
