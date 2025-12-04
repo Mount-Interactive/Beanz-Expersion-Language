@@ -9,29 +9,45 @@ local CheckIfNumberIsValid = Util.CheckIfNumberIsValid
 local Functions = script.Parent.Excutor.Functions
 ]]
 
+local AllowedCharacter = require(script.Parent.ValidCharacterList)
+
+
+
+
 return function(Code: string)
-    local Seperated = Code:split(";")
-
-
     local Info = {}
 
     Info.CACHE = {}
     Info.Instructions = {}
     Info.ActiveValue = nil
 
+    local CurrentFunction = ""
+    local CurrentValue = ""
+    local CurrentStage = 1
 
-    for _ , V in Seperated do
-        local CommentCheck = V:split("--") -- comments are over rated
+    for _, V in ipairs(Code:split("")) do
+        if V == ";" then
+            table.insert(Info.Instructions , `{CurrentFunction}  {CurrentValue}`)
 
-        if CommentCheck[2] then
-            if CommentCheck[1] ~= "" then
-                table.insert(Info.Instructions , CommentCheck[1])
-                continue
+
+            CurrentFunction = ""
+            CurrentValue = ""
+            CurrentStage = 1
+        elseif table.find(AllowedCharacter, V) then
+            if CurrentStage == 1 then
+                CurrentFunction = `{CurrentFunction}{V}`
+            else
+                CurrentValue = `{CurrentValue}{V}`
             end
-            continue
+        elseif V == " " then
+            if CurrentFunction ~= "" then
+                CurrentStage = 2
+            end
         end
-        table.insert(Info.Instructions , V)
     end
+    
+
+
 
 
 
