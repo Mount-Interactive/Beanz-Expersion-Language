@@ -8,9 +8,7 @@ local CheckIfString = Util.CheckIfString
 local CheckIfNumberIsValid = Util.CheckIfNumberIsValid
 local GetAndCheckString = Util.GetAndCheckString
 
-local VALID_FUNCTIONS_THAT_CAN_TAKE_STRING = {
-    "WRITE",
-}
+local VALID_FUNCTIONS_THAT_CAN_TAKE_STRING = require(script.Parent.FunctionsThatTakeString)
 
 
 

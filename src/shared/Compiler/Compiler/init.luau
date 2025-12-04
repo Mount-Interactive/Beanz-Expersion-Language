@@ -1,16 +1,15 @@
 --local Types = require(game:GetService("ReplicatedStorage").Constances.Types.Compiler)
---local Util  = require(script.Parent.Util)
+local Util  = require(script.Parent.Util)
 
 
---[[
 local CheckIfString = Util.CheckIfString
 local CheckIfNumberIsValid = Util.CheckIfNumberIsValid
-]]
+
 local Functions = script.Parent.Excutor.Functions
 
 
 local AllowedCharacter = require(script.Parent.ValidCharacterList)
-
+local FunctionsThatTakeString = require(script.Parent.FunctionsThatTakeString)
 
 
 
@@ -28,6 +27,10 @@ return function(Code: string)
     for _, V in ipairs(Code:split("")) do
         if V == ";" then
             table.insert(Info.Instructions , `{CurrentFunction}  {CurrentValue}`)
+
+            local ValueIsString = CheckIfString(CurrentValue)
+
+            assert(ValueIsString and table.find(FunctionsThatTakeString , CurrentFunction) , `[{script.Name} {CurrentFunction} Can not take string.]`)
 
 
             CurrentFunction = ""
