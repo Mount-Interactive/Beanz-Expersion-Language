@@ -1,6 +1,6 @@
 {
   "files.autoGuessEncoding": false,
   "files.associations": {
-    "*.luau": "luau"
+    "*.luau": "lua"
   }
 }
